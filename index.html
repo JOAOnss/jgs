@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    
+  
+    <script src="arquivos/script.js"><$</script>
+  
+  <link rel="stylesheet" href="arquivos/main.css" <meta="" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liga Pro — Sistema de Pontuação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amrp;family=Barlow:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="liga_futebol.css">
+</head>
+   
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">⚽</div>
+        <div class="logo-text">Liga <span>Pro</span></div>
+      </div>
+      <nav>
+        <button class="active"onclick="showSection ('classificacao', this)">Classificação</button>
+        <button onclick="showSection('resultados', this)">Resultados</button>
+        <button onclick="showSection('artilheiros', this)">Artilheiros</button>
+        <button onclick="showSection('cartoes', this)">Cartões</button>
+        <button onclick="showSection('gerenciar', this)">Gerenciar</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- CLASSIFICAÇÃO -->
+    <section id="classificacao" class="section active">
+      <div class="page-title">🏆 Classificação <span>Pontos Corridos</span></div>
+      <div class="stats-bar" id="statsBar"></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="th-left">#</th>
+                <th class="th-left">Time</th>
+                <th>PJ</th><th>V</th><th>E</th><th>D</th>
+                <th>GP</th><th>GC</th><th>SG</th><th>PTS</th>
+                <th>Forma</th>
+              </tr>
+            </thead>
+            <tbody id="standingsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="resultados" class="section">
+      <div class="page-title">🎯 Resultados <span>&amp; Jogos</span></div>
+      <div class="card mb">
+        <p class="form-label">Adicionar Resultado</p>
+        <div class="add-match-form">
+          <div class="form-group">
+            <label>Mandante</label>
+            <select id="matchHome"></select>
+          </div>
+          <div class="form-group score-group">
+            <label>Placar</label>
+            <div class="score-input-group">
+              <input type="number" id="scoreHome" min="0" value="0">
+              <span class="score-x">×</span>
+              <input type="number" id="scoreAway" min="0" value="0">
+            </div>
+          </div>
+          <div class="vs-wrap">
+            <span class="vs-label">VS</span>
+          </div>
+          <div class="form-group">
+            <label>Visitante</label>
+            <select id="matchAway"></select>
+          </div>
+          <div class="form-group btn-group-form">
+            <label class="label-hidden">ok</label>
+            <button class="btn-primary" onclick="addMatch()">+ Adicionar</button>
+          </div>
+        </div>
+        <div class="round-row">
+          <span class="form-label-sm">Rodada:</span>
+          <input type="number" id="roundInput" class="input-round" min="1" value="1">
+        </div>
+      </div>
+      <div class="matches-grid" id="matchesGrid"></div>
+    </section>
+
+    <!-- ARTILHEIROS -->
+    <section id="artilheiros" class="section">
+      <div class="page-title">⚽ Artilheiros <span>&amp; Assistências</span></div>
+      <div class="card mb">
+        <p class="form-label">Registrar Gol</p>
+        <div class="form-inline">
+          <div class="form-group">
+            <label>Jogador</label>
+            <select id="scorerSelect"></select>
+          </div>
+          <div class="form-group">
+            <label>Gols</label>
+            <input type="number" id="goalsAdd" class="input-sm" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <label>Assistências</label>
+            <input type="number" id="assistsAdd" class="input-sm" min="0" value="0">
+          </div>
+          <button class="btn-primary btn-self-end" onclick="addScorer()">+ Registrar</button>
+        </div>
+      </div>
+      <div class="scorers-grid" id="scorersGrid"></div>
+    </section>
+
+    <!-- CARTÕES -->
+    <section id="cartoes" class="section">
+      <div class="page-title">🟨 Cartões <span>&amp; Disciplina</span></div>
+      <div class="card mb">
+        <p class="form-label">Registrar Cartão</p>
+        <div class="form-inline">
+          <div class="form-group">
+            <label>Jogador</label>
+            <select id="cardPlayerSelect"></select>
+          </div>
+          <div class="form-group">
+            <label>Tipo</label>
+            <select id="cardType">
+              <option value="yellow">🟨 Amarelo</option>
+              <option value="red">🟥 Vermelho</option>
+            </select>
+          </div>
+          <button class="btn-primary btn-self-end" onclick="addCard()">+ Registrar</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th class="th-left">Jogador</th>
+                <th>Time</th>
+                <th>🟨 Amarelos</th>
+                <th>🟥 Vermelhos</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="cardsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- GERENCIAR -->
+    <section id="gerenciar" class="section">
+      <div class="page-title">⚙️ Gerenciar <span>Times &amp; Jogadores</span></div>
+      <div class="action-bar">
+        <button class="btn-primary" onclick="addTeam()">+ Novo Time</button>
+        <button class="btn-primary btn-secondary" onclick="saveAll()">💾 Salvar Tudo</button>
+        <button class="btn-primary btn-danger" onclick="resetLeague()">🗑️ Resetar Liga</button>
+      </div>
+      <div class="manage-grid" id="manageGrid"></div>
+    </section>
+
+  </main>
+
+  <div id="toast"></div>
+  <script src="liga_futebol.js"></script>
+</body>
+</html>
