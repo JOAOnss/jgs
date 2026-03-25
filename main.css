@@ -1,7 +1,3 @@
-/* ============================================================
-   LIGA PRO — Estilos
-   ============================================================ */
-
 :root {
   --blue-deep:   #0a1628;
   --blue-dark:   #0d2147;
@@ -40,9 +36,7 @@ body {
     radial-gradient(ellipse at 80% 90%, rgba(26, 58, 114, 0.3) 0%, transparent 50%);
 }
 
-/* ============================================================
-   HEADER
-   ============================================================ */
+
 header {
   background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
   border-bottom: 2px solid var(--blue-accent);
@@ -125,9 +119,7 @@ nav button.active {
   box-shadow: 0 2px 12px rgba(59, 130, 246, 0.4);
 }
 
-/* ============================================================
-   MAIN / SECTIONS
-   ============================================================ */
+
 main {
   max-width: 1300px;
   margin: 0 auto;
@@ -172,9 +164,7 @@ main {
   background: linear-gradient(to right, var(--blue-accent), transparent);
 }
 
-/* ============================================================
-   CARD
-   ============================================================ */
+
 .card {
   background: linear-gradient(135deg, rgba(13, 33, 71, 0.9), rgba(26, 58, 114, 0.5));
   border: 1px solid var(--white-20);
@@ -189,9 +179,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-/* ============================================================
-   TABELA
-   ============================================================ */
+
 .table-wrap {
   overflow-x: auto;
   border-radius: 8px;
@@ -242,7 +230,7 @@ tbody td:first-child {
   text-align: left;
 }
 
-/* ---- Classificação específico ---- */
+
 .pos {
   font-weight: 800;
   color: var(--blue-light);
@@ -298,9 +286,7 @@ tbody td:first-child {
 .form-e { background: var(--yellow); color: #000; }
 .form-d { background: var(--red);    color: #fff; }
 
-/* ============================================================
-   STATS BAR
-   ============================================================ */
+
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -333,9 +319,7 @@ tbody td:first-child {
   margin-top: 4px;
 }
 
-/* ============================================================
-   FORMULÁRIOS
-   ============================================================ */
+
 .form-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1rem;
@@ -467,8 +451,7 @@ select option {
   padding: 4px 8px;
 }
 
-/* ---- Formulário inline (artilheiros / cartões) ---- */
-.form-inline {
+
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -483,9 +466,7 @@ select option {
   align-self: flex-end;
 }
 
-/* ============================================================
-   BOTÕES
-   ============================================================ */
+
 .btn-primary {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 0.9rem;
@@ -583,10 +564,8 @@ select option {
   margin-bottom: 1.5rem;
 }
 
-/* ============================================================
-   RESULTADOS
-   ============================================================ */
-.matches-grid {
+
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1rem;
@@ -667,7 +646,7 @@ select option {
   padding: 0;
 }
 
-/* Remove setas do input number dentro do placar */
+
 .match-score input::-webkit-inner-spin-button,
 .match-score input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -690,9 +669,7 @@ select option {
   margin-top: 10px;
 }
 
-/* ============================================================
-   ARTILHEIROS
-   ============================================================ */
+
 .scorers-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -774,9 +751,7 @@ select option {
   color: var(--white-60);
 }
 
-/* ============================================================
-   CARTÕES
-   ============================================================ */
+
 .card-yellow {
   display: inline-block;
   width: 13px;
@@ -799,9 +774,7 @@ select option {
   flex-shrink: 0;
 }
 
-/* ============================================================
-   GERENCIAR
-   ============================================================ */
+
 .manage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -882,8 +855,7 @@ select option {
   margin-top: 2px;
 }
 
-/* Color picker — cross-browser reset para remover aparência rosa do Safari/Chrome */
-.color-picker {
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -918,7 +890,7 @@ select option {
   overflow-y: auto;
 }
 
-/* Scrollbar discreta na lista de jogadores */
+
 .players-list::-webkit-scrollbar {
   width: 4px;
 }
@@ -988,8 +960,8 @@ select option {
 .pos-mf { background: rgba(59,  130, 246, 0.2); color: var(--blue-light); }
 .pos-fw { background: rgba(239, 68,  68,  0.2); color: #f87171; }
 
-/* ---- Adicionar jogador ---- */
-.add-player-row {
+
+
   display: flex;
   gap: 8px;
   padding: 10px 18px;
@@ -1036,9 +1008,7 @@ select option {
   background: var(--blue-bright);
 }
 
-/* ============================================================
-   TOAST
-   ============================================================ */
+/* =
 #toast {
   position: fixed;
   bottom: 24px;
